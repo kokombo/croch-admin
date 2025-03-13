@@ -2,7 +2,6 @@ import {
   CustomersIcon,
   DashboardIcon,
   DisputesIcon,
-  FAQsIcon,
   LeaderboardIcon,
   MarketingAndPromotionsIcon,
   TransactionsIcon,
@@ -35,7 +34,6 @@ export const ASIDE_DATA = [
       },
       { title: "Disputes", path: "/disputes", icon: DisputesIcon },
       { title: "Transactions", path: "/transactions", icon: TransactionsIcon },
-      { title: "FAQs", path: "/faqs", icon: FAQsIcon },
     ],
   },
 ];
