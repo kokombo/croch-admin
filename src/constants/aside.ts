@@ -1,16 +1,27 @@
+import {
+  CustomersIcon,
+  DashboardIcon,
+  DisputesIcon,
+  FAQsIcon,
+  LeaderboardIcon,
+  MarketingAndPromotionsIcon,
+  TransactionsIcon,
+  VendorsIcon,
+} from "./icons";
+
 export const ASIDE_DATA = [
   {
     group: "",
     items: [
-      { title: "Dashboard", path: "/dashboard", icon: "home" },
-      { title: "Leaderboard", path: "/leaderboard", icon: "home" },
+      { title: "Dashboard", path: "/dashboard", icon: DashboardIcon },
+      { title: "Leaderboard", path: "/leaderboard", icon: LeaderboardIcon },
     ],
   },
   {
     group: "Users",
     items: [
-      { title: "Vendors", path: "/vendors", icon: "home" },
-      { title: "Customers", path: "/customers", icon: "home" },
+      { title: "Vendors", path: "/vendors", icon: VendorsIcon },
+      { title: "Customers", path: "/customers", icon: CustomersIcon },
     ],
   },
 
@@ -20,12 +31,11 @@ export const ASIDE_DATA = [
       {
         title: "Mkt. & promotion",
         path: "/marketing-and-promotion",
-        icon: "home",
+        icon: MarketingAndPromotionsIcon,
       },
-      { title: "Disputes", path: "/disputes", icon: "home" },
-      { title: "Transactions", path: "/transactions", icon: "home" },
-      { title: "Reviews", path: "/reviews", icon: "home" },
-      { title: "FAQs", path: "/faqs", icon: "home" },
+      { title: "Disputes", path: "/disputes", icon: DisputesIcon },
+      { title: "Transactions", path: "/transactions", icon: TransactionsIcon },
+      { title: "FAQs", path: "/faqs", icon: FAQsIcon },
     ],
   },
 ];

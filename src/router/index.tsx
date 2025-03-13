@@ -1,10 +1,13 @@
 import { Routes, Route } from "react-router";
-import { Home } from "../pages";
+import { Dashboard } from "../pages";
+import { MainLayout } from "../layouts";
 
 const Router = () => {
   return (
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route element={<MainLayout />}>
+        <Route path="/" element={<Dashboard />} />
+      </Route>
     </Routes>
   );
 };
