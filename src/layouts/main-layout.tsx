@@ -11,7 +11,7 @@ const MainLayout = () => {
 
       <div className="w-10/12">
         <Navigationbar />
-        <section className="px-2 bg-gray-50 min-h-screen mt-24">
+        <section className="px-2 bg-gray-50 min-h-screen">
           <Outlet />
         </section>
       </div>

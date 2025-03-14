@@ -12,7 +12,7 @@ export const ASIDE_DATA = [
   {
     group: "",
     items: [
-      { title: "Dashboard", path: "/dashboard", icon: DashboardIcon },
+      { title: "Dashboard", path: "/", icon: DashboardIcon },
       { title: "Leaderboard", path: "/leaderboard", icon: LeaderboardIcon },
     ],
   },

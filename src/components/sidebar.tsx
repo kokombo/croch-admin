@@ -1,8 +1,14 @@
-import { NavLink } from "react-router";
+import { NavLink, useLocation } from "react-router";
 import { ASIDE_DATA } from "../constants/aside";
 import { SettingsIcon, SignOutIcon } from "../constants/icons";
+import { cn } from "../lib/utils";
+import { useState } from "react";
 
 const Sidebar = () => {
+  const [isHoveredPath, setIsHoveredPath] = useState(false);
+
+  const location = useLocation();
+
   return (
     <aside className="p-8 flex flex-col justify-between h-full fixed left-0 top-0">
       <div>
@@ -20,13 +26,26 @@ const Sidebar = () => {
                 <ul className="pl-4">
                   {data.items.map((link, index) => {
                     return (
-                      <li
-                        key={index.toString()}
-                        className="flex items-center gap-4 p-3 text-black/70 hover:bg-black hover:rounded-xl hover:text-white"
-                      >
-                        <link.icon />
-                        <NavLink to={link.path} className="font-medium">
-                          {link.title}
+                      <li key={index.toString()}>
+                        <NavLink
+                          to={link.path}
+                          className={({ isActive }) =>
+                            cn(
+                              isActive
+                                ? "bg-black rounded-xl text-white"
+                                : "text-black/70 hover:bg-black/70 hover:rounded-xl hover:text-white",
+                              "flex items-center gap-4 p-3  font-medium"
+                            )
+                          }
+                          onMouseEnter={() => setIsHoveredPath(true)}
+                          onMouseLeave={() => setIsHoveredPath(false)}
+                        >
+                          <link.icon
+                            isActive={
+                              location.pathname === link.path || isHoveredPath
+                            }
+                          />
+                          <span>{link.title}</span>
                         </NavLink>
                       </li>
                     );
