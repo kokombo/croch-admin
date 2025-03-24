@@ -2,11 +2,8 @@ import { NavLink, useLocation } from "react-router";
 import { ASIDE_DATA } from "../constants/aside";
 import { SettingsIcon, SignOutIcon } from "../constants/icons";
 import { cn } from "../lib/utils";
-import { useState } from "react";
 
 const Sidebar = () => {
-  const [isHoveredPath, setIsHoveredPath] = useState(false);
-
   const location = useLocation();
 
   return (
@@ -33,17 +30,13 @@ const Sidebar = () => {
                             cn(
                               isActive
                                 ? "bg-black rounded-xl text-white"
-                                : "text-black/70 hover:bg-black/70 hover:rounded-xl hover:text-white",
+                                : "text-black/70 hover:bg-black/10 hover:rounded-xl",
                               "flex items-center gap-4 p-3  font-medium"
                             )
                           }
-                          onMouseEnter={() => setIsHoveredPath(true)}
-                          onMouseLeave={() => setIsHoveredPath(false)}
                         >
                           <link.icon
-                            isActive={
-                              location.pathname === link.path || isHoveredPath
-                            }
+                            isActive={location.pathname === link.path}
                           />
                           <span>{link.title}</span>
                         </NavLink>
@@ -58,7 +51,7 @@ const Sidebar = () => {
       </div>
 
       <div>
-        <span className="flex items-center gap-4 p-3 text-black/70 hover:bg-black hover:rounded-xl hover:text-white">
+        <span className="flex items-center gap-4 p-3 text-black/70 hover:bg-black/10 hover:rounded-xl">
           <SettingsIcon />
           <NavLink to="/settings" className="font-medium">
             Settings
